@@ -1,0 +1,149 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Find Movie</h1>
+    <p>Search for a movie.</p>
+
+    <form (submit)="searchMovies()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input [(ngModel)]="searchStr" name="searchStr" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Find</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="searchRes.length > 0">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Search Results</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div *ngFor="let movie of searchRes, let i = index">
+          <div class="col-md-2 arrange">
+            <img *ngIf="movie.poster_path" class="thumbnail" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            <img *ngIf="!movie.poster_path" class="thumbnail" src="https://s-media-cache-ak0.pinimg.com/originals/d3/8b/c3/d38bc38ad9ba60f9091aa2a9b3f4190f.png">
+            <h5>{{movie.title}}</h5>
+            <p>{{movie.release_date}}</p>
+            <p><a href="#" routerLink="/movie/{{movie.id}}" class="btn btn-default">View Details</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Popular Movies</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row" *ngIf="popularMoviesList">
+      <div *ngFor="let movie of popularMoviesList, let i = index">
+        <div *ngIf="i < 6" class="col-md-2">
+          <img *ngIf="movie.poster_path" class="thumbnail" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <img *ngIf="!movie.poster_path" class="thumbnail" src="https://s-media-cache-ak0.pinimg.com/originals/d3/8b/c3/d38bc38ad9ba60f9091aa2a9b3f4190f.png">
+          <h5>{{movie.title}}</h5>
+          <p>{{movie.release_date}}</p>
+          <p><a href="#" routerLink="/movie/{{movie.id}}" class="btn btn-default">View Details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">In Theaters</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row" *ngIf="nowInTheastersList">
+      <div *ngFor="let movie of nowInTheastersList, let i = index">
+        <div *ngIf="i < 6" class="col-md-2">
+          <img *ngIf="movie.poster_path" class="thumbnail" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <img *ngIf="!movie.poster_path" class="thumbnail" src="https://s-media-cache-ak0.pinimg.com/originals/d3/8b/c3/d38bc38ad9ba60f9091aa2a9b3f4190f.png">
+          <h5>{{movie.title}}</h5>
+          <p>{{movie.release_date}}</p>
+          <p><a href="#" routerLink="/movie/{{movie.id}}" class="btn btn-default">View Details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">-->
+  <!--<div class="col-md-2">-->
+    <!--<h2>Title</h2>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum sodales turpis eu venenatis. </p>-->
+    <!--<p><a href="#" class="btn btn-default" role="button">View Details</a></p>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-2">-->
+    <!--<h2>Title</h2>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum sodales turpis eu venenatis. </p>-->
+    <!--<p><a href="#" class="btn btn-default" role="button">View Details</a></p>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-2">-->
+    <!--<h2>Title</h2>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum sodales turpis eu venenatis. </p>-->
+    <!--<p><a href="#" class="btn btn-default" role="button">View Details</a></p>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-2">-->
+    <!--<h2>Title</h2>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum sodales turpis eu venenatis. </p>-->
+    <!--<p><a href="#" class="btn btn-default" role="button">View Details</a></p>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-2">-->
+    <!--<h2>Title</h2>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum sodales turpis eu venenatis. </p>-->
+    <!--<p><a href="#" class="btn btn-default" role="button">View Details</a></p>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-2">-->
+    <!--<h2>Title</h2>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum sodales turpis eu venenatis. </p>-->
+    <!--<p><a href="#" class="btn btn-default" role="button">View Details</a></p>-->
+  <!--</div>-->
+
+<!--</div>-->
