@@ -29,7 +29,7 @@ export class MovieService {
 
 
   searchMovie(searchStr){
-    return this.jsonp.get('https://api.themoviedb.org/3/search/movie?' + this.jsonpCallback + '&query=' + searchStr + '&sort_by=popularity.desc' + this.apikey)
+    return this.jsonp.get('https://api.themoviedb.org/3/search/movie' + this.jsonpCallback + '&query=' + searchStr + '&sort_by=popularity.desc' + this.apikey)
       .map(result => result.json())
 
   }
