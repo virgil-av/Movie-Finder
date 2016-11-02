@@ -1,4 +1,7 @@
-# App9
+# Movie-Finder
+
+## Live Demo
+https://virgil-av.github.io/Movie-Finder/
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
 
